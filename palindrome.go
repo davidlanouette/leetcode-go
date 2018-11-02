@@ -1,13 +1,8 @@
 package leetcode
 
-import (
-	"fmt"
-)
-
 func isPalindrome(x int) bool {
-	fmt.Println("x=", x)
+	// a working copy of the input
 	i := x
-
 	reverse := 0
 	for i > 0 {
 		// get the lowest digit
@@ -18,9 +13,6 @@ func isPalindrome(x int) bool {
 
 		// shift i over one place - ie, 123 -> 12
 		i = i / 10
-
-		fmt.Println("digit=", digit, " reverse = ", reverse, " i=", i)
 	}
-	fmt.Println("-> x=", x, " reverse=", reverse)
 	return reverse == x
 }
