@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// This does NOT work for multi-byte characters.
+// This DOES work for multi-byte characters.
 func reverseWords(s string) string {
 
 	var buf bytes.Buffer
