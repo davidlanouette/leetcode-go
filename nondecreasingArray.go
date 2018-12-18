@@ -30,20 +30,6 @@ func checkPossibility(nums []int) bool {
 	return true
 }
 
-func max(i, j int) int {
-	if i > j {
-		return i
-	}
-	return j
-}
-
-func min(i, j int) int {
-	if i < j {
-		return i
-	}
-	return j
-}
-
 func isSorted(list []int) bool {
 	last := list[0]
 	for _, i := range list[1:] {
