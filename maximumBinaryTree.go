@@ -41,14 +41,11 @@ func (n *TreeNode) String() string {
 }
 
 func constructMaximumBinaryTree(nums []int) *TreeNode {
-
-	fmt.Println("nums", nums)
 	if len(nums) == 0 {
 		return nil
 	}
 
 	maxIdx, maxVal := findMax(nums)
-	fmt.Println("maxIdx", maxIdx, "maxVal", maxVal)
 
 	root := &TreeNode{
 		Val:   maxVal,

@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -22,7 +21,6 @@ func TestConstructMaximumBinaryTree(t *testing.T) {
 	for _, d := range data {
 
 		n := constructMaximumBinaryTree(d.input)
-		fmt.Println("n", n, "expected", d.expected)
 		assert.Equal(t, d.expected, n.String())
 	}
 }
