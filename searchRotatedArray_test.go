@@ -6,25 +6,35 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// Input: nums = [2,5,6,0,0,1,2], target = 0
-// Output: true
-func TestSearch_HappyPath(t *testing.T) {
-	nums := []int{2, 5, 6, 0, 0, 1, 2}
-	target := 0
+func TestSearch(t *testing.T) {
+	testVals := []struct {
+		nums     []int
+		target   int
+		expected bool
+	}{
+		{[]int{}, 5, false},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 0, true},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 3, false},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 0, true},
+	}
 
-	assert.True(t, search(nums, target))
+	for _, v := range testVals {
+		assert.Equal(t, v.expected, search(v.nums, v.target))
+	}
 }
+func TestSearch2(t *testing.T) {
+	testVals := []struct {
+		nums     []int
+		target   int
+		expected bool
+	}{
+		{[]int{}, 5, false},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 0, true},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 3, false},
+		{[]int{2, 5, 6, 0, 0, 1, 2}, 0, true},
+	}
 
-func TestSearch_TargetIsntInArray(t *testing.T) {
-	nums := []int{2, 5, 6, 0, 0, 1, 2}
-	target := 3
-
-	assert.False(t, search(nums, target))
-}
-
-func TestSearch_LeetcodeInput1(t *testing.T) {
-	nums := []int{2, 5, 6, 0, 0, 1, 2}
-	target := 0
-
-	assert.True(t, search(nums, target))
+	for _, v := range testVals {
+		assert.Equal(t, v.expected, search2(v.nums, v.target))
+	}
 }
